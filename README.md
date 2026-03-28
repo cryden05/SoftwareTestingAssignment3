@@ -11,7 +11,7 @@
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/cryden05/SoftwareTestingAssignment3
    cd InventoryManagementSystem
 
 ---
