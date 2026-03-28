@@ -1,0 +1,38 @@
+Environment Setup and Execution:
+
+1. Install Node.js and npm.
+
+2. Setup Database:
+   - For this example, we'll use a local MongoDB instance. Install MongoDB and start the server.
+   - Or you could use a cloud based mongodb service like mongodb atlas.
+
+3. Backend Setup:
+   - Navigate to the 'backend' directory.
+   - Run 'npm install' to install dependencies.
+   - Create a '.env' file in the 'backend' directory with the following content:
+     DATABASE_URL=mongodb://127.0.0.1:27017/inventory
+     JWT_SECRET=your_secret_key
+   - Run 'npm start' to start the backend server.
+
+4. Frontend Setup:
+   - Navigate to the 'frontend' directory.
+   - Run 'npm install' to install dependencies.
+   - Run 'npm start' to start the frontend application.
+   - The application will be available at http://localhost:3000.
+
+5. Accessing the Application:
+   - Open a web browser and navigate to http://localhost:3000.
+   - Use the provided credentials or create new accounts with different roles.
+
+Testing and Issues:
+
+- User authentication may have issues with token expiration.
+- Product list rendering might be slow with a large number of products.
+- Report generation may fail for certain date ranges.
+- Some transaction entries might not update stock levels correctly.
+- Responsiveness issues may be present on smaller screens.
+- Concurrent transaction handling during high traffic may fail.
+- Database connection may fail with high load.
+- Some edge cases with forms have not been handled.
+- Some pages don't render correctly.
+- Some api calls don't return the correct data.
