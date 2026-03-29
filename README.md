@@ -1,54 +1,45 @@
-## Getting Started
+# Inventory Management System
 
-### Prerequisites
+## Prerequisites
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+- Docker Desktop
+
+## Run with Docker
+
+From the project root:
+
+```bash
+docker compose up --build
+```
+
+This starts:
+- React frontend
+- Node.js backend
 - MongoDB
 
-### Installation
+## Access the Application
 
-1. **Clone the repository:**
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5001
+- MongoDB: `mongodb://localhost:27017`
 
-   ```bash
-   git clone https://github.com/cryden05/SoftwareTestingAssignment3
-   cd InventoryManagementSystem
+Note:
+- The backend container listens on port `5000` internally.
+- It is mapped to host port `5001` because port `5000` was already in use on this machine.
+- MongoDB is not a webpage, so do not open port `27017` in your browser.
 
----
+## Local Backend Environment
 
-### 2. Start the application using Docker
-docker-compose up --build
+If you run the backend outside Docker, create `backend/.env` with:
 
-This will:
-- Start the Node.js backend
-- Start the MongoDB container
-- Connect both services automatically
+```env
+DATABASE_URL=mongodb://127.0.0.1:27017/inventory
+JWT_SECRET=your_secret_key
+PORT=5000
+```
 
----
+## Stop the Application
 
-### 3. Access the application
-
-Backend API:
-http://localhost:3000
-
-MongoDB:
-mongodb://mongo:27017/testdb
-
----
-
-## Environment Variables
-
-Create a `.env` file inside the backend folder if needed:
-
-MONGO_URI=mongodb://mongo:27017/testdb
-PORT=3000
-
-
----
-
-
-## Stopping the Application
-
-docker-compose down
-
----
+```bash
+docker compose down
+```

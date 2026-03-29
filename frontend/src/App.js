@@ -12,8 +12,8 @@ import './styles.css';
 
 function App() {
   return (
-    <AuthProvider>
       <Router>
+        <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
@@ -22,8 +22,8 @@ function App() {
           <Route path="/transactions" element={<ProtectedRoute><TransactionList /></ProtectedRoute>} />
           <Route path="/reports" element={<ProtectedRoute><Report /></ProtectedRoute>} />
         </Routes>
+        </AuthProvider>
       </Router>
-    </AuthProvider>
   );
 }
 
